@@ -7,25 +7,37 @@ import { AppComponent } from './app.component';
 import { AdminDaseComponent } from './Component/admin-dase/admin-dase.component';
 import { SidebarComponent } from './Component/sidebar/sidebar.component';
 import { NavbarComponent } from './Component/navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewsUpdateComponent } from './Component/news-update/news-update.component';
-import { LoginComponent } from './login/login.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './Component/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminDaseComponent,
-    LoginComponent,
     SidebarComponent,
     NavbarComponent,
-    NewsUpdateComponent
+    NewsUpdateComponent,
+    LoginComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule 
+    FormsModule ,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    ReactiveFormsModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]

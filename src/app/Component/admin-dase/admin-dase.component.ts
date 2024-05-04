@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthloginService } from 'src/app/Services/authlogin.service';
 import { NewsService } from 'src/app/Services/news.service';
 import Swal from 'sweetalert2';
 import swal, { SweetAlertResult } from 'sweetalert2';
@@ -16,7 +17,7 @@ export class AdminDaseComponent {
   sort: string | null = null;
   dir: string | null = null;
   filterdata: string | null = null;
-  constructor(private newsService: NewsService, private router: Router) { }
+  constructor(private newsService: NewsService,private authlogin: AuthloginService, private router: Router) { }
 
   ngOnInit(): void {
     this.newsService.getAllNews().subscribe({
@@ -25,6 +26,7 @@ export class AdminDaseComponent {
         console.log(this.allNewsData);
       })
     });
+   console.log(this.authlogin.getUserId())
   }
 
   onSubmit(filterValue: string): void {

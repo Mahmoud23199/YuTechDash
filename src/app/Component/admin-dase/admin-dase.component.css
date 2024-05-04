@@ -9,6 +9,12 @@ nav a{
     width: 100%;
 }
 
+.intro .introbtn{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    
+}
 /* html,
 body,
 .intro {

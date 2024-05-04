@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Inews } from '../Component/model/Inews';
+import { IaddedNews } from '../Component/model/IaddNews';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,13 @@ export class NewsService {
 
   }
   
+  
+  addedNews(news:IaddedNews):Observable<any>
+  {
+    return this.httpClient.post(`${this.baseUrl}/api/News`,news);
+  }
+
+
   deleteNews(id: number): Observable<any> {
     const url = `${this.baseUrl}/api/News/${id}`;
     return this.httpClient.delete<any>(url);

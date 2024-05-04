@@ -15,6 +15,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './Component/login/login.component';
+import { AddednewsComponent } from './Component/addednews/addednews.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { LoginComponent } from './Component/login/login.component';
     SidebarComponent,
     NavbarComponent,
     NewsUpdateComponent,
-    LoginComponent 
+    LoginComponent,
+    AddednewsComponent 
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,9 @@ import { LoginComponent } from './Component/login/login.component';
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule ,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

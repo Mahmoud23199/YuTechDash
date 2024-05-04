@@ -76,6 +76,10 @@ export class AdminDaseComponent {
       }
     });
   }
+
+  AddedNews(){
+    this.router.navigate(['addedNews'])
+  }
   
   
 }

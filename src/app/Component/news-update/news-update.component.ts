@@ -66,6 +66,8 @@ update(titledata:any,descriptiondata:any,newsContent:any)
 
 }
 
-
+home(){
+  this.router.navigate(['home'])
+}
 
 }

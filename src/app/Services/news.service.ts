@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Inews } from '../Component/model/Inews';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,14 @@ export class NewsService {
       return this.httpClient.get<any>(url);
     }
 
+  }
+  
+  deleteNews(id: number): Observable<any> {
+    const url = `${this.baseUrl}/api/News/${id}`;
+    return this.httpClient.delete<any>(url);
+  }
+
+  updateNews(news: Inews): Observable<Inews> {
+    return this.httpClient.put<Inews>(`${this.baseUrl}/api/News`, news); 
   }
 }

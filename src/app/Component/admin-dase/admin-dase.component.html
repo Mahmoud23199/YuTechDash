@@ -1,10 +1,11 @@
 <div class="d-flex">
 
     <app-sidebar></app-sidebar>
+
     <div class="content">
         <nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0">
             <div class="container">
-              <a class="navbar-brand" routerLink="/home">YuTeach</a>
+              <a class="navbar-brand" routerLink="/home">News Data</a>
               <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
                 aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="d-flex justify-content-start align-items-center">
@@ -55,9 +56,108 @@
               </div>
             </div>
         </nav>
-=
     </div>
+
+    <div style="width: 100%;margin-top: 20px;margin: 15px;">
+        <!-- <div class="data-info">
+          
+            <div class="box">
+                <i class="fa-regular fa-address-card"></i>
+              <div class="data">
+                 <p>posts</p>
+                 <span>100</span>
+              </div>
+            </div>
+ 
+            <div class="box">
+             <i class="fas fa-user"></i>
+             <div class="data">
+                <p>users</p>
+                <span>100</span>
+             </div>
+           </div>
+ 
+           <div class="box">
+            <i class="fa-solid fa-user-tie"></i>
+             <div class="data">
+                <p>authors</p>
+                <span>100</span>
+             </div>
+           </div>
+ 
+           <div class="box">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+             <div class="data">
+                <p>revenue</p>
+                <span>570$</span>
+             </div>
+           </div>
+         </div>  -->
+        
+        
+         <section class="intro mt-5">
+            <div class="gradient-custom-1 h-100">
+              <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-12">
+                      <div class="table-responsive bg-white">
+                        <table class="table mb-0">
+                          <thead>
+                            <tr>
+                              <th scope="col">Title</th>
+                              <th scope="col">CreationDate</th>
+                              <th scope="col">PublicationDate</th>
+                              <th scope="col">Description</th>
+                              <th scope="col">NewsContent</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of allNewsData ">
+                              <th scope="row" style="color: #666666;">{{item?.title}}</th>
+                              <td>{{item?.creationDate | date: 'd MMM yyyy'}}</td>
+                              <td>{{item?.publicationDate | date: 'd MMM yyyy'}}</td>
+                              <td>{{item?.description}}</td>
+                              <td>{{item?.newsContent}}</td>
+
+                              <td>
+                                <i (click)="update(item.id)" class="fa-solid fa-pen-to-square pe-2" style="font-size: 20px; color: burlywood; cursor: pointer;"></i>
+                                <i (click)="delete(item.id)" class="fa-solid fa-trash" style="font-size: 20px; color: red; cursor: pointer;"></i>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+       
+    </div>
+
+
 </div>
 
 
+<!-- 
+<table>
+    <thead>
+        <tr>
+            <th>ww</th>
+            <th>dd</th>
+            <th>dd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
 
+        </tr>
+    </tbody>
+ </table> -->

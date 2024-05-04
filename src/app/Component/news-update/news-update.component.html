@@ -1,0 +1,53 @@
+<section class="intro mt-5">
+    <div class="gradient-custom-1 h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="table-responsive bg-white">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">CreationDate</th>
+                      <th scope="col">PublicationDate</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">NewsContent</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr >
+                      <th scope="row" style="color: #666666;"><input #title type="text" value="{{newData?.title}}"></th>
+                      <td><input type="text" value="{{newData?.creationDate | date: 'd MMM yyyy'}}" readonly></td>
+                      <td><input type="text" value="{{newData?.publicationDate | date: 'd MMM yyyy'}}" readonly ></td>
+                      <td><input type="text" value="{{newData?.description}}" #description></td>
+                      <td><input type="text" value="{{newData?.newsContent}}" #newsContent></td>
+                      <td> 
+                        <i (click)="update(title.value , description.value,newsContent.value)" class="fa-solid fa-pen-to-square pe-2" style="font-size: 15px; color: burlywood; cursor: pointer;">Save</i>
+                    </td>
+                    </tr>
+                  </tbody>
+                  <span *ngIf="isEmpty" style="color: red;">all fileds are required</span>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <tr >
+    <th scope="row" style="color: #666666;"><input #title type="text" value="{{newData?.title}}"></th>
+    <td><input type="text" value="{{newData?.creationDate | date: 'd MMM yyyy'}}" readonly></td>
+    <td><input type="text" value="{{newData?.publicationDate | date: 'd MMM yyyy'}}" readonly ></td>
+    <td><input type="text" value="{{newData?.description}}" #description></td>
+    <td>
+      <i (click)="update(title.value , description.value)" class="fa-solid fa-pen-to-square pe-2" style="font-size: 20px; color: burlywood; cursor: pointer;"></i>
+    </td>
+  </tr>
+</tbody>
+<span ngIf="isEmpty" style="color: red;">description and title are required</span> -->

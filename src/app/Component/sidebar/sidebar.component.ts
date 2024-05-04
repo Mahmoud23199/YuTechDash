@@ -16,4 +16,11 @@ export class SidebarComponent {
    this.authlogin.removeUserId();
    this.router.navigate(['login'])
   }
+  authorPage(){
+    this.router.navigate(['authorPage'])
+
+  }
+  home(){
+    this.router.navigate(['home'])
+  }
 }

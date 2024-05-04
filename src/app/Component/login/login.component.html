@@ -1,5 +1,5 @@
 <div style="max-height: 100vh;">
-    <div class="container d-flex justify-content-center mt-4">
+    <div class="container d-flex justify-content-center">
         <div class="col-md-7 border border-gray rounded-4 px-4" style="margin-top: 150px;box-shadow: 0px 0px 20px whitesmoke;margin-bottom: 60px;">
             <div class="text-center mt-5">
                 <h2 class="text-second mb-4" style="color: #123;"> تسجيل الدخول</h2>
@@ -46,7 +46,7 @@
                             <span *ngIf="password?.errors?.['required']" class="text-danger">password is required</span>
                         </mat-error>
                     </mat-form-field>
-                    <!-- <span *ngIf="password?.errors?.['required']" class="text-danger"> خطأ عنوان البريد أو كلمة المرور غير صحيحة </span> -->
+                    <span *ngIf="errormes" class="text-danger">Invalid UserName or Password</span>
                 </div>
             </div>
 <!--     
@@ -71,10 +71,6 @@
         </div>
     
     </div>
-    <footer class="footImg col" style="width: 100%;">
-        <div>
-        <img src="assets\image\wave-top.svg" >
-        </div>
-    </footer>
+    
 </div>
 

@@ -1,0 +1,57 @@
+<div class="container d-flex justify-content-center">
+    <div class="col-md-7 border border-gray rounded-4 px-4" style="margin-top: 50px !important;box-shadow: 0px 0px 20px whitesmoke;margin-bottom: 60px;">
+        <div class="text-center mt-2">
+            <h2 class="text-second mb-4" style="color: #123;">Create Author</h2>
+        </div>
+
+        
+     <form class="form-floating" action="" method="" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <div class=" mt-3">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="authorName" placeholder="Author Name" formControlName="authorName">
+                      <div *ngIf="authorName?.invalid && (authorName?.dirty || authorName?.touched)" class="text-danger">
+                        <span *ngIf="authorName?.hasError('required')">Author Name is required</span>
+                        <span *ngIf="authorName?.hasError('minlength')">Author Name must be at least 3 characters</span>
+                        <span *ngIf="authorName?.hasError('maxlength')">Author Name cannot exceed 20 characters</span>
+                      </div>
+                    </div>
+                  </div>
+             </div>
+
+             <div class="col mt-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="biography" placeholder="Author Biography" formControlName="biography">
+                    <div *ngIf="biography?.touched && biography?.invalid" class="text-danger">
+                        <span *ngIf="biography?.errors?.['pattern']">الأسم يجب أن يكون 8 حروف على الأقل ولا يحتوي على أرقام</span>
+                        <span *ngIf="biography?.errors?.['required']"> Author Biography is required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row mt-3">
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="country" placeholder="Country"formControlName="country" required>
+                </div>
+                <div *ngIf="country?.touched && country?.invalid" class="text-danger">
+                    <span *ngIf="country?.errors?.['pattern']">الأسم يجب أن يكون 8 حروف على الأقل ولا يحتوي على أرقام</span>
+                    <span *ngIf="country?.errors?.['required']"> Country is required</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        
+     <div class="d-grid gap-2 text-center mt-3 mb-3">
+        <button class="btn btn-primary rounded-5" type="submit" style="height: 55px; background-color: #123;font-size: 18px;font-weight: 500;"> Create</button>
+      </div>
+     </form>
+    </div>
+    
+</div>

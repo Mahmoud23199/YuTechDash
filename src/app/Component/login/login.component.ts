@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthloginService } from 'src/app/Services/authlogin.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  errormes:boolean=false;
   isInputFocused: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,private authService:AuthloginService,private router:Router) {}
+  constructor(private fb: FormBuilder,private authService:AuthloginService,private router:Router,private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -51,10 +51,11 @@ export class LoginComponent {
           // Handle success
           // console.log(`succes ${data.token}`)
           this.router.navigate(['home'])
+          
         },
         error: (err) => {
         //  Handle error
- 
+        this.errormes=true;
           
         }
       });

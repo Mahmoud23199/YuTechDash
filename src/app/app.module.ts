@@ -19,6 +19,10 @@ import { AddednewsComponent } from './Component/addednews/addednews.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthorInDashComponent } from './Component/author-in-dash/author-in-dash.component';
+import { AddedAuthorComponent } from './Component/added-author/added-author.component';
+import { UpdateAuthorComponent } from './Component/update-author/update-author.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     NavbarComponent,
     NewsUpdateComponent,
     LoginComponent,
-    AddednewsComponent 
+    AddednewsComponent,
+    AuthorInDashComponent,
+    AddedAuthorComponent,
+    UpdateAuthorComponent 
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule ,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

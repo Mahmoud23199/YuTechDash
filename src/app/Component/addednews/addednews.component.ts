@@ -4,6 +4,7 @@ import { NewsService } from 'src/app/Services/news.service';
 import { IaddedNews } from '../model/IaddNews';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthorService } from 'src/app/Services/author.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-addednews',
@@ -15,7 +16,7 @@ export class AddednewsComponent implements OnInit {
   signupForm!: FormGroup;
   AuthorsData:any;
   
-  constructor(private fb: FormBuilder,private newsService:NewsService,private router:Router,private authorService:AuthorService) {}
+  constructor(private fb: FormBuilder,private newsService:NewsService,private router:Router,private authorService:AuthorService,private snackBar: MatSnackBar) {}
   ngOnInit(): void {
    
     this.signupForm = this.fb.group({
@@ -105,6 +106,10 @@ export class AddednewsComponent implements OnInit {
     this.newsService.addedNews(insertNewsData).subscribe({
       next:(data=>{
           console.log(data);
+          this.snackBar.open('News posted successfully', 'Close', {
+            duration: 5000, 
+            verticalPosition: "top" 
+          });
           this.router.navigate(['home'])
       }),
       error:(err=>{

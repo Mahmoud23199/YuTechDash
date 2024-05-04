@@ -1,0 +1,84 @@
+nav{
+    background-color: #123;
+}
+nav a{
+    color: aliceblue;
+}
+.board{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.intro .introbtn{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    
+}
+/* html,
+body,
+.intro {
+  height: 100%;
+}
+
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+tbody td {
+  font-weight: 500;
+  color: #999999;
+} */
+.data-info{
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.data-info .box{
+    background-color: #123;
+    height: 150px;
+    flex-grow: 1;
+    max-width: calc(50% - 20px); 
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+.data-info .box:hover{
+    background-color: rgba(17, 34, 51, 0.663);
+}
+.data-info .box i {
+    font-size: 30px;
+}
+.data-info .box .data
+{
+    text-align: center;
+
+}
+.data-info .box .data span
+{
+ font-size: 25px;
+}
+#title{
+    background-color: rgba(17, 34, 51, 0.458);
+    margin: auto;
+    color: aliceblue;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .data-info .box {
+        max-width: calc(100% - 20px); /* Adjust the maximum width for smaller screens */
+        margin-bottom: 15px; /* Add some spacing between the boxes */
+    }
+}
